@@ -1,9 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
+/* 
+ * ============================================
+ * UNIFIED COLOR SYSTEM
+ * ============================================
+ * All colors are defined here for easy management.
+ * Change colors here and they will update throughout the entire site.
+ */
+
+:root {
+  /* Primary Color - Orange from logo */
+  --color-primary: #f6861f;
+  --color-primary-hover: #e76815;
+  --color-primary-light: #f7b07a;
+  --color-primary-dark: #c04f14;
+  
+  /* Secondary Color - Yellow from logo */
+  --color-secondary: #edeb6d;
+  --color-secondary-hover: #eab308;
+  --color-secondary-light: #fef08a;
+  --color-secondary-dark: #ca8a04;
+  
+  /* Accent Color - Brown from logo */
+  --color-accent: #6f6549;
+  --color-accent-hover: #5a4f3d;
+  --color-accent-light: #a39567;
+  --color-accent-dark: #4c4335;
+  
+  /* Neutral Colors */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  
+  /* Background Colors */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f9fafb;
+  --color-bg-accent: #f3f4f6;
+  
+  /* Text Colors */
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #6b7280;
+}
+
 /* RTL adjustments */
 html[dir="rtl"] body {
   direction: rtl;
+}
+
+/* Apply color system to body */
+body {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
 }
 
 html[dir="rtl"] .text-left {
