@@ -1,0 +1,166 @@
+[
+  {
+    "id": "aromatherapy-massage",
+    "category": "beauty_massage",
+    "image": "/images/aromatherapy-massage.jpg",
+    "duration": "60-90 min",
+    "price": "€85",
+    "translations": {
+      "de": {
+        "name": "Aromatherapie Massage",
+        "description": "Entspannende Ganzkörpermassage mit natürlichen ätherischen Ölen",
+        "long_description": "Unsere Aromatherapie Massage verbindet traditionelle Massagetechniken mit der Kraft natürlicher ätherischer Öle. Diese ganzheitliche Behandlung fördert tiefe Entspannung und Wohlbefinden.",
+        "meta_title": "Aromatherapie Massage in Berlin - Seelenruhe Studio",
+        "meta_description": "Genießen Sie eine entspannende Aromatherapie Massage mit natürlichen ätherischen Ölen im Seelenruhe Studio Berlin.",
+        "meta_keywords": "aromatherapie massage, ätherische öle, entspannung, berlin, seelenruhe"
+      },
+      "en": {
+        "name": "Aromatherapy Massage",
+        "description": "Relaxing full-body massage with natural essential oils",
+        "long_description": "Our aromatherapy massage combines traditional massage techniques with the power of natural essential oils. This holistic treatment promotes deep relaxation and wellbeing.",
+        "meta_title": "Aromatherapy Massage in Berlin - Seelenruhe Studio",
+        "meta_description": "Enjoy a relaxing aromatherapy massage with natural essential oils at Seelenruhe Studio Berlin.",
+        "meta_keywords": "aromatherapy massage, essential oils, relaxation, berlin, seelenruhe"
+      },
+      "ar": {
+        "name": "مساج العلاج العطري",
+        "description": "مساج مريح للجسم بالكامل بالزيوت الطبيعية العطرية",
+        "long_description": "مساج العلاج العطري لدينا يجمع بين تقنيات المساج التقليدية وقوة الزيوت الطبيعية العطرية. هذا العلاج الشامل يعزز الاسترخاء العميق والرفاهية.",
+        "meta_title": "مساج العلاج العطري في برلين - استوديو سيلينروه",
+        "meta_description": "استمتع بمساج العلاج العطري المريح بالزيوت الطبيعية العطرية في استوديو سيلينروه برلين.",
+        "meta_keywords": "مساج علاج عطري, زيوت عطرية, استرخاء, برلين, سيلينروه"
+      },
+      "tr": {
+        "name": "Aromaterapi Masajı",
+        "description": "Doğal uçucu yağlarla rahatlatıcı tüm vücut masajı",
+        "long_description": "Aromaterapi masajımız geleneksel masaj tekniklerini doğal uçucu yağların gücüyle birleştirir. Bu bütünsel tedavi derin rahatlama ve sağlığı teşvik eder.",
+        "meta_title": "Berlin'de Aromaterapi Masajı - Seelenruhe Stüdyosu",
+        "meta_description": "Seelenruhe Stüdyosu Berlin'de doğal uçucu yağlarla rahatlatıcı aromaterapi masajının keyfini çıkarın.",
+        "meta_keywords": "aromaterapi masajı, uçucu yağlar, rahatlama, berlin, seelenruhe"
+      }
+    }
+  },
+  {
+    "id": "hot-stone-therapy",
+    "category": "therapeutic_massage",
+    "image": "/images/hot-stone-massage.jpg",
+    "duration": "75 min",
+    "price": "€95",
+    "translations": {
+      "de": {
+        "name": "Hot Stone Therapie",
+        "description": "Tiefenwirksame Entspannung mit warmen Vulkansteinen",
+        "long_description": "Die Hot Stone Therapie nutzt erwärmte Vulkansteine, um tiefe Entspannung zu fördern und Muskelverspannungen zu lösen. Die Wärme der Steine dringt tief in das Gewebe ein und fördert die Durchblutung.",
+        "meta_title": "Hot Stone Therapie in Berlin - Seelenruhe Studio",
+        "meta_description": "Erleben Sie tiefe Entspannung mit unserer Hot Stone Therapie im Seelenruhe Studio Berlin.",
+        "meta_keywords": "hot stone therapie, warme steine, entspannung, berlin, seelenruhe"
+      },
+      "en": {
+        "name": "Hot Stone Therapy",
+        "description": "Deep relaxation with warm volcanic stones",
+        "long_description": "Hot stone therapy uses heated volcanic stones to promote deep relaxation and release muscle tension. The warmth of the stones penetrates deep into the tissue and promotes circulation.",
+        "meta_title": "Hot Stone Therapy in Berlin - Seelenruhe Studio",
+        "meta_description": "Experience deep relaxation with our hot stone therapy at Seelenruhe Studio Berlin.",
+        "meta_keywords": "hot stone therapy, warm stones, relaxation, berlin, seelenruhe"
+      },
+      "ar": {
+        "name": "علاج الأحجار الساخنة",
+        "description": "استرخاء عميق بأحجار بركانية دافئة",
+        "long_description": "علاج الأحجار الساخنة يستخدم أحجار بركانية ساخنة لتعزيز الاسترخاء العميق وتحرير توتر العضلات. دفء الأحجار يخترق عميقاً في الأنسجة ويعزز الدورة الدموية.",
+        "meta_title": "علاج الأحجار الساخنة في برلين - استوديو سيلينروه",
+        "meta_description": "اختبر الاسترخاء العميق مع علاج الأحجار الساخنة في استوديو سيلينروه برلين.",
+        "meta_keywords": "علاج أحجار ساخنة, أحجار دافئة, استرخاء, برلين, سيلينروه"
+      },
+      "tr": {
+        "name": "Sıcak Taş Terapisi",
+        "description": "Sıcak volkanik taşlarla derin rahatlama",
+        "long_description": "Sıcak taş terapisi, derin rahatlamayı teşvik etmek ve kas gerginliğini çözmek için ısıtılmış volkanik taşlar kullanır. Taşların sıcaklığı dokuya derinlemesine nüfuz eder ve dolaşımı teşvik eder.",
+        "meta_title": "Berlin'de Sıcak Taş Terapisi - Seelenruhe Stüdyosu",
+        "meta_description": "Seelenruhe Stüdyosu Berlin'de sıcak taş terapimizle derin rahatlama yaşayın.",
+        "meta_keywords": "sıcak taş terapisi, sıcak taşlar, rahatlama, berlin, seelenruhe"
+      }
+    }
+  },
+  {
+    "id": "facial-treatment",
+    "category": "regular_beauty",
+    "image": "/images/facial-beauty-treatment.jpg",
+    "duration": "60 min",
+    "price": "€75",
+    "translations": {
+      "de": {
+        "name": "Gesichtsbehandlung",
+        "description": "Revitalisierende Pflege für strahlende Haut",
+        "long_description": "Unsere professionelle Gesichtsbehandlung reinigt, pflegt und revitalisiert Ihre Haut. Mit hochwertigen Produkten und bewährten Techniken bringen wir Ihre Haut zum Strahlen.",
+        "meta_title": "Gesichtsbehandlung in Berlin - Seelenruhe Studio",
+        "meta_description": "Professionelle Gesichtsbehandlung für strahlende Haut im Seelenruhe Studio Berlin.",
+        "meta_keywords": "gesichtsbehandlung, hautpflege, schönheit, berlin, seelenruhe"
+      },
+      "en": {
+        "name": "Facial Treatment",
+        "description": "Revitalizing care for radiant skin",
+        "long_description": "Our professional facial treatment cleanses, nourishes and revitalizes your skin. With high-quality products and proven techniques, we make your skin glow.",
+        "meta_title": "Facial Treatment in Berlin - Seelenruhe Studio",
+        "meta_description": "Professional facial treatment for radiant skin at Seelenruhe Studio Berlin.",
+        "meta_keywords": "facial treatment, skincare, beauty, berlin, seelenruhe"
+      },
+      "ar": {
+        "name": "علاج الوجه",
+        "description": "عناية منعشة لبشرة مشرقة",
+        "long_description": "علاج الوجه الاحترافي لدينا ينظف ويغذي ويجدد بشرتك. بمنتجات عالية الجودة وتقنيات مثبتة، نجعل بشرتك تتألق.",
+        "meta_title": "علاج الوجه في برلين - استوديو سيلينروه",
+        "meta_description": "علاج وجه احترافي لبشرة مشرقة في استوديو سيلينروه برلين.",
+        "meta_keywords": "علاج وجه, عناية بشرة, جمال, برلين, سيلينروه"
+      },
+      "tr": {
+        "name": "Yüz Bakımı",
+        "description": "Parlak cilt için canlandırıcı bakım",
+        "long_description": "Profesyonel yüz bakımımız cildinizi temizler, besler ve canlandırır. Yüksek kaliteli ürünler ve kanıtlanmış tekniklerle cildinizi parlatırız.",
+        "meta_title": "Berlin'de Yüz Bakımı - Seelenruhe Stüdyosu",
+        "meta_description": "Seelenruhe Stüdyosu Berlin'de parlak cilt için profesyonel yüz bakımı.",
+        "meta_keywords": "yüz bakımı, cilt bakımı, güzellik, berlin, seelenruhe"
+      }
+    }
+  },
+  {
+    "id": "wellness-ritual",
+    "category": "beauty_therapy",
+    "image": "/images/wellness-ritual-spa.jpg",
+    "duration": "120 min",
+    "price": "€150",
+    "translations": {
+      "de": {
+        "name": "Wellness Ritual",
+        "description": "Ganzheitliches Entspannungserlebnis für Körper und Geist",
+        "long_description": "Unser exklusives Wellness Ritual ist eine umfassende Behandlung, die Massage, Körperpflege und Entspannungstechniken kombiniert. Gönnen Sie sich eine Auszeit vom Alltag und erleben Sie pure Entspannung.",
+        "meta_title": "Wellness Ritual in Berlin - Seelenruhe Studio",
+        "meta_description": "Erleben Sie unser exklusives Wellness Ritual für Körper und Geist im Seelenruhe Studio Berlin.",
+        "meta_keywords": "wellness ritual, entspannung, spa, berlin, seelenruhe"
+      },
+      "en": {
+        "name": "Wellness Ritual",
+        "description": "Holistic relaxation experience for body and mind",
+        "long_description": "Our exclusive wellness ritual is a comprehensive treatment that combines massage, body care and relaxation techniques. Treat yourself to a break from everyday life and experience pure relaxation.",
+        "meta_title": "Wellness Ritual in Berlin - Seelenruhe Studio",
+        "meta_description": "Experience our exclusive wellness ritual for body and mind at Seelenruhe Studio Berlin.",
+        "meta_keywords": "wellness ritual, relaxation, spa, berlin, seelenruhe"
+      },
+      "ar": {
+        "name": "طقوس العافية",
+        "description": "تجربة استرخاء شاملة للجسم والعقل",
+        "long_description": "طقوس العافية الحصرية لدينا هي علاج شامل يجمع بين المساج والعناية بالجسم وتقنيات الاسترخاء. امنح نفسك استراحة من الحياة اليومية واختبر الاسترخاء النقي.",
+        "meta_title": "طقوس العافية في برلين - استوديو سيلينروه",
+        "meta_description": "اختبر طقوس العافية الحصرية للجسم والعقل في استوديو سيلينروه برلين.",
+        "meta_keywords": "طقوس عافية, استرخاء, سبا, برلين, سيلينروه"
+      },
+      "tr": {
+        "name": "Wellness Ritüeli",
+        "description": "Beden ve zihin için bütünsel rahatlama deneyimi",
+        "long_description": "Özel wellness ritüelimiz masaj, vücut bakımı ve rahatlama tekniklerini birleştiren kapsamlı bir tedavidir. Kendinize günlük yaşamdan bir mola verin ve saf rahatlamayı deneyimleyin.",
+        "meta_title": "Berlin'de Wellness Ritüeli - Seelenruhe Stüdyosu",
+        "meta_description": "Seelenruhe Stüdyosu Berlin'de beden ve zihin için özel wellness ritüelimizi deneyimleyin.",
+        "meta_keywords": "wellness ritüeli, rahatlama, spa, berlin, seelenruhe"
+      }
+    }
+  }
+]

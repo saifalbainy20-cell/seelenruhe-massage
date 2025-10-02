@@ -1,0 +1,184 @@
+---
+import type { Language } from '../lib/i18n';
+import { getTranslation } from '../data/translations';
+
+export interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+const t = getTranslation(lang);
+---
+
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background Images with Zoom Effect -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40 z-10"></div>
+  
+  <!-- Background Image Carousel with Zoom -->
+  <div class="absolute inset-0 hero-bg">
+    <div class="bg-slide active zoom-in" style="background-image: url('/images/hero-massage-studio.jpg')" role="img" aria-label="Massage Studio"></div>
+    <div class="bg-slide zoom-in" style="background-image: url('/images/relaxing-massage-room.jpg')" role="img" aria-label="Wellness Treatment"></div>
+    <div class="bg-slide zoom-in" style="background-image: url('/images/massage-therapy-session.jpg')" role="img" aria-label="Relaxation"></div>
+  </div>
+
+  <!-- Dynamic Content -->
+  <div class={`relative z-20 text-center text-white max-w-4xl mx-auto px-6 hero-content ${lang === 'ar' ? 'rtl' : 'ltr'}`} id="hero-content">
+    <h1 class="text-5xl md:text-7xl font-light mb-6 leading-tight">
+      <span class="block opacity-0 animate-fade-in-up hero-rotating-text fade-transition" style="animation-delay: 0.5s"></span>
+    </h1>
+    
+    <p class="text-xl md:text-2xl mb-8 opacity-0 animate-fade-in-up font-light hero-description" style="animation-delay: 1.5s">
+      {t.hero.description}
+    </p>
+    
+    <a href="https://wa.me/+963937628368" target="_blank" class="inline-block bg-primary hover:bg-accent text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 opacity-0 animate-fade-in-up hero-cta" aria-label="Book an appointment" style="animation-delay: 2s">
+      {t.nav.book}
+    </a>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+    <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+      <div class="w-1 h-3 bg-white rounded-full mt-2 animate-bounce"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .bg-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    transform: scale(1);
+  }
+
+  .bg-slide.active {
+    opacity: 1;
+  }
+
+  /* Zoom In Animation */
+  @keyframes zoomInEffect {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  .zoom-in {
+    animation: zoomInEffect 8s ease-out infinite;
+  }
+
+  /* Text Animations */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease-out forwards;
+  }
+
+  /* Parallax effect */
+  .hero-bg {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Responsive text direction for Arabic */
+  .hero-content.rtl {
+    direction: rtl;
+  }
+
+  .hero-content.ltr {
+    direction: ltr;
+  }
+
+  .hero-content h1,
+  .hero-content p {
+    text-align: center;
+  }
+</style>
+
+<script define:vars={{ rotatingHeadings: t.hero.rotating_headings }}>
+  // Background image carousel with zoom sync
+  const slides = document.querySelectorAll(".bg-slide");
+  let currentSlide = 0;
+
+  function nextSlide() {
+    // Remove active class and reset zoom
+    slides[currentSlide].classList.remove("active");
+    
+    // Move to next slide
+    currentSlide = (currentSlide + 1) % slides.length;
+    
+    // Add active class to new slide
+    slides[currentSlide].classList.add("active");
+  }
+
+  // Change background every 8 seconds to sync with zoom animation
+  setInterval(nextSlide, 8000);
+
+  // Parallax effect on scroll
+  window.addEventListener("scroll", () => {
+    const scrolled = window.pageYOffset;
+    const parallax = document.querySelector(".hero-bg");
+    if (parallax) {
+      const speed = scrolled * 0.5;
+      parallax.style.transform = `translateY(${speed}px)`;
+    }
+  });
+
+  // Rotating text logic
+  const rotatingTextElement = document.querySelector('.hero-rotating-text');
+  let currentHeadingIndex = 0;
+
+  function updateRotatingText() {
+    // Add fade-out class
+    rotatingTextElement.classList.add('fade-out');
+    rotatingTextElement.classList.remove('fade-in');
+    
+    setTimeout(() => {
+      rotatingTextElement.textContent = rotatingHeadings[currentHeadingIndex];
+      // Add fade-in class
+      rotatingTextElement.classList.remove('fade-out');
+      rotatingTextElement.classList.add('fade-in');
+      currentHeadingIndex = (currentHeadingIndex + 1) % rotatingHeadings.length;
+    }, 1000); // Fade out duration
+  }
+
+  // Initial display
+  setTimeout(() => {
+    rotatingTextElement.textContent = rotatingHeadings[0];
+    rotatingTextElement.classList.add('fade-in');
+    rotatingTextElement.style.opacity = 1;
+  }, 500);
+  
+  // Start rotation after initial display
+  setTimeout(() => {
+    updateRotatingText();
+    // Rotate every 4 seconds
+    setInterval(updateRotatingText, 4000);
+  }, 3000);
+</script>

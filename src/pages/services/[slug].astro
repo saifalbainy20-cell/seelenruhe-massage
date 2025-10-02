@@ -1,0 +1,194 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getTranslation } from '../../data/translations';
+import servicesData from '../../content/services.json';
+import { generateServiceSchema, generateBreadcrumbSchema } from '../../lib/structured-data';
+
+export async function getStaticPaths() {
+  return servicesData.map((service) => ({
+    params: { slug: service.id },
+    props: { service }
+  }));
+}
+
+const { service } = Astro.props;
+const lang = 'de';
+const t = getTranslation(lang);
+
+const serviceTranslation = service.translations[lang];
+
+const serviceSchema = generateServiceSchema({
+  name: serviceTranslation.name,
+  description: serviceTranslation.long_description || serviceTranslation.description,
+  provider: 'Seelenruhe Massage Studio',
+  serviceType: 'Massage and Wellness',
+  areaServed: 'Berlin, Germany',
+  url: `${Astro.site}services/${service.id}`
+});
+
+const breadcrumbData = generateBreadcrumbSchema([
+  { name: t.nav.home, url: `${Astro.site}` },
+  { name: t.nav.services, url: `${Astro.site}services` },
+  { name: serviceTranslation.name, url: `${Astro.site}services/${service.id}` }
+]);
+
+const combinedSchema = [serviceSchema, breadcrumbData];
+---
+
+<Layout 
+  title={serviceTranslation.meta_title}
+  description={serviceTranslation.meta_description}
+  keywords={serviceTranslation.meta_keywords}
+  lang={lang}
+  canonical={`${Astro.site}services/${service.id}`}
+  structuredData={combinedSchema}
+>
+  <Header lang={lang} currentPath={`/services/${service.id}`} />
+  <main class="pt-24">
+    <!-- Hero Section -->
+    <section class="relative h-96 overflow-hidden">
+      <img 
+        src={service.image} 
+        alt={serviceTranslation.name}
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 flex items-center justify-center">
+        <div class="text-center text-white px-6">
+          <h1 class="text-5xl md:text-6xl font-bold mb-4">{serviceTranslation.name}</h1>
+          <div class="flex items-center justify-center space-x-6 text-lg">
+            <span class="flex items-center">
+              <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              {service.duration}
+            </span>
+            <span class="text-2xl font-bold text-secondary">{service.price}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <!-- Breadcrumb -->
+          <nav class="mb-8 text-sm">
+            <ol class="flex items-center space-x-2 text-gray-600">
+              <li>
+                <a href="/" class="hover:text-primary transition-colors">{t.nav.home}</a>
+              </li>
+              <li>/</li>
+              <li>
+                <a href="/services" class="hover:text-primary transition-colors">{t.nav.services}</a>
+              </li>
+              <li>/</li>
+              <li class="text-primary font-medium">{serviceTranslation.name}</li>
+            </ol>
+          </nav>
+
+          <!-- Description -->
+          <div class="prose prose-lg max-w-none mb-12">
+            <p class="text-xl text-gray-700 leading-relaxed mb-6">
+              {serviceTranslation.description}
+            </p>
+            {serviceTranslation.long_description && (
+              <p class="text-gray-600 leading-relaxed">
+                {serviceTranslation.long_description}
+              </p>
+            )}
+          </div>
+
+          <!-- Features -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-gray-50 p-6 rounded-lg text-center">
+              <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <h3 class="font-bold text-gray-800 mb-2">Dauer</h3>
+              <p class="text-gray-600">{service.duration}</p>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg text-center">
+              <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <h3 class="font-bold text-gray-800 mb-2">Preis</h3>
+              <p class="text-gray-600 text-xl font-bold text-primary">{service.price}</p>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg text-center">
+              <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <h3 class="font-bold text-gray-800 mb-2">Professionell</h3>
+              <p class="text-gray-600">Zertifizierte Therapeuten</p>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="bg-gradient-to-r from-primary to-accent p-8 rounded-lg text-center text-white">
+            <h2 class="text-3xl font-bold mb-4">{t.contact.book_now}</h2>
+            <p class="mb-6 text-lg">
+              Erleben Sie die Vorteile von {serviceTranslation.name}
+            </p>
+            <a 
+              href="https://wa.me/+963937628368" 
+              target="_blank"
+              class="inline-block bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105"
+            >
+              {t.nav.book}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12 text-center">
+          Weitere Leistungen
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {servicesData
+            .filter(s => s.id !== service.id)
+            .map((relatedService) => {
+              const relatedTranslation = relatedService.translations[lang];
+              return (
+                <a 
+                  href={`/services/${relatedService.id}`}
+                  class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                >
+                  <div class="relative h-48 overflow-hidden">
+                    <img 
+                      src={relatedService.image} 
+                      alt={relatedTranslation.name}
+                      class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                    />
+                  </div>
+                  <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">{relatedTranslation.name}</h3>
+                    <p class="text-gray-600 text-sm mb-4">{relatedTranslation.description}</p>
+                    <div class="flex items-center justify-between text-sm">
+                      <span class="text-accent font-medium">{relatedService.duration}</span>
+                      <span class="text-primary font-bold">{relatedService.price}</span>
+                    </div>
+                  </div>
+                </a>
+              );
+            })}
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer lang={lang} />
+</Layout>

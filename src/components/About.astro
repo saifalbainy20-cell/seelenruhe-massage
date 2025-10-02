@@ -1,0 +1,72 @@
+---
+import type { Language } from '../lib/i18n';
+import { getTranslation } from '../data/translations';
+
+export interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+const t = getTranslation(lang);
+---
+
+<section id="about" class="py-20 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Image Section -->
+      <div class="relative">
+        <div class="grid grid-cols-2 gap-4">
+          <img 
+            src="/images/aromatherapy-massage.jpg" 
+            alt="Massage Studio Interior"
+            class="rounded-lg shadow-lg w-full h-64 object-cover transform transition-transform duration-300 hover:scale-105"
+          />
+          <img 
+            src="/images/wellness-ritual-spa.jpg" 
+            alt="Wellness Treatment"
+            class="rounded-lg shadow-lg w-full h-64 object-cover transform transition-transform duration-300 hover:scale-105 mt-8"
+          />
+        </div>
+        <div class="absolute -bottom-8 -right-8 bg-primary text-white p-8 rounded-lg shadow-xl">
+          <p class="text-4xl font-bold">10+</p>
+          <p class="text-sm">{t.about.experience}</p>
+        </div>
+      </div>
+
+      <!-- Content Section -->
+      <div>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">{t.about.title}</h2>
+        <p class="text-xl text-primary mb-6">{t.about.subtitle}</p>
+        <p class="text-gray-600 leading-relaxed mb-8">
+          {t.about.description}
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="flex items-start space-x-4">
+            <div class="bg-primary/10 p-3 rounded-lg">
+              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-800 mb-1">{t.about.professional}</h3>
+              <p class="text-gray-600 text-sm">Zertifizierte Therapeuten</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div class="bg-primary/10 p-3 rounded-lg">
+              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-800 mb-1">{t.about.relaxing}</h3>
+              <p class="text-gray-600 text-sm">Harmonische Umgebung</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

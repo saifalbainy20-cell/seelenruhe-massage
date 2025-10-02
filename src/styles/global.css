@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* RTL adjustments */
+html[dir="rtl"] body {
+  direction: rtl;
+}
+
+html[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+html[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+/* Typography */
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.hero-rotating-text {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 1s ease-in-out;
+}
+
+/* Smooth text animations */
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(246, 134, 31, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(246, 134, 31, 0.6), 0 0 30px rgba(246, 134, 31, 0.4);
+  }
+}
+
+.hero-rotating-text {
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+/* Smooth fade transitions */
+.fade-transition {
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+:root {
+  --color-primary: #f6861f;
+  --color-secondary: #edeb6d;
+  --color-accent: #6f6549;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+.bg-primary {
+  background-color: var(--color-primary);
+}
+.hover\:bg-primary:hover {
+  background-color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+.hover\:bg-secondary:hover {
+  background-color: var(--color-secondary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+.bg-accent {
+  background-color: var(--color-accent);
+}
+.hover\:bg-accent:hover {
+  background-color: var(--color-accent);
+}

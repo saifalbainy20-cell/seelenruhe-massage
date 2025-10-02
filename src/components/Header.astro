@@ -1,0 +1,162 @@
+---
+import type { Language } from '../lib/i18n';
+import { getTranslation } from '../data/translations';
+import LanguageSwitcher from './LanguageSwitcher';
+
+export interface Props {
+  lang: Language;
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+const t = getTranslation(lang);
+const isRTL = lang === 'ar';
+
+// Helper function to get localized path
+const getLocalizedPath = (path: string) => {
+  if (lang === 'de') {
+    return path;
+  }
+  return `/${lang}${path}`;
+};
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
+  <nav class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href={getLocalizedPath('/')} class="flex items-center">
+        <img 
+          src={isRTL ? "/images/logo_arabic.svg" : "/images/logo_non_arabic.svg"} 
+          alt="Seelenruhe Logo" 
+          class="h-12 w-auto transition-transform duration-300 hover:scale-105"
+        />
+      </a>
+
+      <!-- Desktop Navigation - Centered -->
+      <div class="hidden lg:flex items-center justify-center flex-1 mx-8">
+        <ul class="flex items-center space-x-8">
+          <li>
+            <a 
+              href={getLocalizedPath('/')}
+              class={`text-gray-700 hover:text-primary transition-colors duration-300 font-medium ${currentPath === '' ? 'text-primary' : ''}`}
+            >
+              {t.nav.home}
+            </a>
+          </li>
+          <li>
+            <a 
+              href={getLocalizedPath('/services')}
+              class={`text-gray-700 hover:text-primary transition-colors duration-300 font-medium ${currentPath.startsWith('/services') ? 'text-primary' : ''}`}
+            >
+              {t.nav.services}
+            </a>
+          </li>
+          <li>
+            <a 
+              href={getLocalizedPath('/#about')}
+              class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium"
+            >
+              {t.nav.about}
+            </a>
+          </li>
+          <li>
+            <a 
+              href={getLocalizedPath('/#contact')}
+              class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium"
+            >
+              {t.nav.contact}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right Side: Language Switcher & Book Button -->
+      <div class="flex items-center space-x-4">
+        <!-- Language Switcher - Always Visible -->
+        <LanguageSwitcher lang={lang} currentPath={currentPath} client:load />
+
+        <!-- Book Button - Always Visible -->
+        <a 
+          href="https://wa.me/+963937628368" 
+          target="_blank"
+          class="hidden md:inline-block bg-primary hover:bg-accent text-white px-6 py-2 rounded-full font-medium transition-all duration-300 transform hover:scale-105"
+        >
+          {t.nav.book}
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button 
+          id="mobile-menu-button"
+          class="lg:hidden text-gray-700 hover:text-primary transition-colors duration-300"
+          aria-label="Toggle mobile menu"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu - Only Navigation Links -->
+    <div id="mobile-menu" class="hidden lg:hidden mt-4 pb-4">
+      <ul class="flex flex-col space-y-4">
+        <li>
+          <a 
+            href={getLocalizedPath('/')}
+            class={`block text-gray-700 hover:text-primary transition-colors duration-300 font-medium ${currentPath === '' ? 'text-primary' : ''}`}
+          >
+            {t.nav.home}
+          </a>
+        </li>
+        <li>
+          <a 
+            href={getLocalizedPath('/services')}
+            class={`block text-gray-700 hover:text-primary transition-colors duration-300 font-medium ${currentPath.startsWith('/services') ? 'text-primary' : ''}`}
+          >
+            {t.nav.services}
+          </a>
+        </li>
+        <li>
+          <a 
+            href={getLocalizedPath('/#about')}
+            class="block text-gray-700 hover:text-primary transition-colors duration-300 font-medium"
+          >
+            {t.nav.about}
+          </a>
+        </li>
+        <li>
+          <a 
+            href={getLocalizedPath('/#contact')}
+            class="block text-gray-700 hover:text-primary transition-colors duration-300 font-medium"
+          >
+            {t.nav.contact}
+          </a>
+        </li>
+        <!-- Book Button for Small Screens -->
+        <li class="md:hidden">
+          <a 
+            href="https://wa.me/+963937628368" 
+            target="_blank"
+            class="block bg-primary hover:bg-accent text-white px-6 py-2 rounded-full font-medium text-center transition-all duration-300"
+          >
+            {t.nav.book}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  });
+</script>

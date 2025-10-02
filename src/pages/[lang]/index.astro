@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import Welcome from '../../components/Welcome.astro';
+import Services from '../../components/Services.astro';
+import About from '../../components/About.astro';
+import Footer from '../../components/Footer.astro';
+import { languages, type Language } from '../../lib/i18n';
+import { getTranslation } from '../../data/translations';
+import { generateOrganizationSchema } from '../../lib/structured-data';
+
+export async function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Language };
+const t = getTranslation(lang);
+
+const organizationData = generateOrganizationSchema({
+  name: 'Seelenruhe Massage Studio',
+  url: 'https://www.seelenruhe.com',
+  logo: 'https://www.seelenruhe.com/images/logo_non_arabic.svg',
+  description: t.seo.home_description,
+  address: {
+    streetAddress: 'Musterstraße 123',
+    addressLocality: 'Berlin',
+    postalCode: '12345',
+    addressCountry: 'DE'
+  },
+  contactPoint: {
+    telephone: '+49 30 12345678',
+    email: 'info@seelenruhe.com',
+    contactType: 'customer service'
+  }
+});
+---
+
+<Layout 
+  title={t.seo.home_title}
+  description={t.seo.home_description}
+  keywords={t.seo.home_keywords}
+  lang={lang}
+  structuredData={organizationData}
+>
+  <Header lang={lang} currentPath="" />
+  <main>
+    <Hero lang={lang} />
+    <Welcome lang={lang} />
+    <Services lang={lang} />
+    <About lang={lang} />
+  </main>
+  <Footer lang={lang} />
+</Layout>

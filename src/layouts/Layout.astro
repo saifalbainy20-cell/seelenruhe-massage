@@ -1,0 +1,69 @@
+---
+import '../styles/global.css';
+import { languages, type Language } from '../lib/i18n';
+
+export interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+  lang: Language;
+  canonical?: string;
+  structuredData?: any;
+}
+
+const { title, description, keywords, lang, canonical, structuredData } = Astro.props;
+const currentPath = lang === 'de' ? Astro.url.pathname : Astro.url.pathname.replace(`/${lang}`, '');
+const isRTL = lang === 'ar';
+
+// Generate hreflang links
+const hreflangs = Object.keys(languages).map(l => ({
+  lang: l,
+  url: l === 'de' ? `${Astro.site}${currentPath}` : `${Astro.site}${l}${currentPath}`
+}));
+---
+
+<!doctype html>
+<html lang={lang} dir={isRTL ? 'rtl' : 'ltr'}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonical || (lang === 'de' ? `${Astro.site}${currentPath}` : `${Astro.site}${lang}${currentPath}`)} />
+    
+    <!-- Hreflang tags -->
+    {hreflangs.map(({ lang: hreflang, url }) => (
+      <link rel="alternate" hreflang={hreflang} href={url} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={`${Astro.site}${currentPath}`} />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical || (lang === 'de' ? `${Astro.site}${currentPath}` : `${Astro.site}${lang}${currentPath}`)} />
+    <meta property="og:site_name" content="Seelenruhe Massage Studio" />
+    <meta property="og:locale" content={lang === 'de' ? 'de_DE' : lang === 'en' ? 'en_US' : lang === 'ar' ? 'ar_AR' : 'tr_TR'} />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Structured Data -->
+    {structuredData && (
+      <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    )}
+    
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
