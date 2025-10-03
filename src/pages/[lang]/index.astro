@@ -5,6 +5,7 @@ import Hero from '../../components/Hero.astro';
 import Welcome from '../../components/Welcome.astro';
 import Services from '../../components/Services.astro';
 import About from '../../components/About.astro';
+import FounderIntro from '../../components/FounderIntro.astro';
 import Footer from '../../components/Footer.astro';
 import { languages, type Language } from '../../lib/i18n';
 import { getTranslation } from '../../data/translations';
@@ -51,6 +52,7 @@ const organizationData = generateOrganizationSchema({
     <Welcome lang={lang} />
     <Services lang={lang} />
     <About lang={lang} />
+    <FounderIntro lang={lang} />
   </main>
   <Footer lang={lang} />
 </Layout>

@@ -77,13 +77,23 @@ const getLocalizedPath = (path: string) => {
         <LanguageSwitcher lang={lang} currentPath={currentPath} client:load />
 
         <!-- Book Button - Always Visible -->
-        <a 
-          href="https://wa.me/+963937628368" 
-          target="_blank"
-          class="hidden md:inline-block bg-primary hover:bg-primary-600 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-md"
-        >
-          {t.nav.book}
-        </a>
+        <div class="relative hidden md:inline-block group">
+          <button
+            class="bg-primary hover:bg-primary-600 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-md"
+            aria-expanded="false"
+            aria-controls="booking-options-menu"
+          >
+            {t.nav.book}
+          </button>
+          <div id="booking-options-menu" class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+            <a href="tel:+053147214636" class="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-md">
+              {t.nav.book_call}
+            </a>
+            <a href="mailto:info@seelenruhe.com?subject=Anfrage%20Termin%20Seelenruhe%20Massage" class="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-md">
+              {t.nav.book_email}
+            </a>
+          </div>
+        </div>
 
         <!-- Mobile Menu Button -->
         <button 
@@ -136,11 +146,16 @@ const getLocalizedPath = (path: string) => {
         <!-- Book Button for Small Screens -->
         <li class="md:hidden">
           <a 
-            href="https://wa.me/+963937628368" 
-            target="_blank"
+            href="tel:+053147214636"
+            class="block bg-primary hover:bg-primary-600 text-white px-6 py-2 rounded-full font-medium text-center transition-all duration-300 shadow-md mb-2"
+          >
+            {t.nav.book_call}
+          </a>
+          <a 
+            href="mailto:info@seelenruhe.com?subject=Anfrage%20Termin%20Seelenruhe%20Massage"
             class="block bg-primary hover:bg-primary-600 text-white px-6 py-2 rounded-full font-medium text-center transition-all duration-300 shadow-md"
           >
-            {t.nav.book}
+            {t.nav.book_email}
           </a>
         </li>
       </ul>

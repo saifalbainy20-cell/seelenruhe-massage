@@ -8,6 +8,8 @@ export interface Translation {
     about: string;
     contact: string;
     book: string;
+    book_call: string;
+    book_email: string;
   };
   
   // Hero Section
@@ -51,6 +53,18 @@ export interface Translation {
     relaxing: string;
   };
   
+  // Founder Intro
+  founderIntro: {
+    greeting: string;
+    paragraph1: string;
+    paragraph2: string;
+    paragraph3: string;
+    paragraph4: string;
+    paragraph5: string;
+    paragraph6: string;
+    paragraph7: string;
+  };
+
   // Contact
   contact: {
     title: string;
@@ -87,7 +101,9 @@ export const translations: Record<Language, Translation> = {
       services: 'Leistungen',
       about: 'Über uns',
       contact: 'Kontakt',
-      book: 'Termin buchen'
+      book: 'Termin buchen',
+      book_call: 'Per Telefon buchen',
+      book_email: 'Per E-Mail buchen'
     },
     hero: {
       rotating_headings: [
@@ -130,7 +146,7 @@ export const translations: Record<Language, Translation> = {
       subtitle: 'Wir freuen uns auf Ihren Besuch',
       address: 'Musterstraße 123, 12345 Berlin',
       phone: '+49 30 12345678',
-      email: 'info@seelenruhe.com',
+      email: 'info@seelenruhe.com?subject=Anfrage%20Termin%20Seelenruhe%20Massage',
       hours: 'Mo-Fr: 9:00-20:00 Uhr, Sa: 10:00-18:00 Uhr',
       book_now: 'Jetzt buchen'
     },
@@ -139,6 +155,16 @@ export const translations: Record<Language, Translation> = {
       privacy: 'Datenschutz',
       terms: 'AGB',
       imprint: 'Impressum'
+    },
+    founderIntro: {
+      greeting: 'Hallo ihr Lieben!',
+      paragraph1: 'Ich bin Najlaa Loulo, zertifizierte Masseurin und Gründerin dieses Herzensprojekts, das aus meiner Leidenschaft für ganzheitliches Wohlbefinden entstanden ist.',
+      paragraph2: 'In meiner Praxis bekommst du mehr als nur eine Massage – es ist deine persönliche Auszeit vom Alltag, individuell abgestimmt auf deine Bedürfnisse.',
+      paragraph3: 'Ich arbeite mit natürlichen Ölen, verschiedenen Massagetechniken und viel Feingefühl, damit du dich sowohl körperlich als auch mental rundum wohlfühlst.',
+      paragraph4: 'Und das Beste? Schon bald erweitere ich mein Angebot um professionelle Kosmetikbehandlungen – für gesunde, strahlende Haut und noch mehr Wohlbefinden. Denn echte Schönheit beginnt mit Selbstfürsorge.',
+      paragraph5: 'Ob Verspannungen, Muskelermüdung oder der Wunsch nach gepflegter Haut – bei mir bist du in den besten Händen.',
+      paragraph6: 'Gönn dir eine Pause – für deinen Körper, deine Haut und dein inneres Gleichgewicht. 🌿',
+      paragraph7: ''
     },
     seo: {
       home_title: 'Seelenruhe Massage Studio - Entspannung und Wohlbefinden in Berlin',
@@ -155,7 +181,9 @@ export const translations: Record<Language, Translation> = {
       services: 'Services',
       about: 'About',
       contact: 'Contact',
-      book: 'Book Appointment'
+      book: 'Book Appointment',
+      book_call: 'Book by Phone',
+      book_email: 'Book by Email'
     },
     hero: {
       rotating_headings: [
@@ -198,7 +226,7 @@ export const translations: Record<Language, Translation> = {
       subtitle: 'We look forward to your visit',
       address: 'Sample Street 123, 12345 Berlin',
       phone: '+49 30 12345678',
-      email: 'info@seelenruhe.com',
+      email: 'info@seelenruhe.com?subject=Appointment%20Inquiry%20Seelenruhe%20Massage',
       hours: 'Mon-Fri: 9:00-20:00, Sat: 10:00-18:00',
       book_now: 'Book Now'
     },
@@ -207,6 +235,16 @@ export const translations: Record<Language, Translation> = {
       privacy: 'Privacy Policy',
       terms: 'Terms of Service',
       imprint: 'Imprint'
+    },
+    founderIntro: {
+      greeting: 'Hello my dears!',
+      paragraph1: 'I am Najlaa Loulo, a certified masseuse and founder of this heart project, which arose from my passion for holistic well-being.',
+      paragraph2: 'In my practice, you get more than just a massage – it is your personal break from everyday life, individually tailored to your needs.',
+      paragraph3: 'I work with natural oils, various massage techniques, and a lot of sensitivity so that you feel completely comfortable both physically and mentally.',
+      paragraph4: 'And the best part? I will soon be expanding my offer to include professional cosmetic treatments – for healthy, radiant skin and even more well-being. Because true beauty begins with self-care.',
+      paragraph5: 'Whether it\'s tension, muscle fatigue, or the desire for well-groomed skin – you are in the best hands with me.',
+      paragraph6: 'Treat yourself to a break – for your body, your skin, and your inner balance. 🌿',
+      paragraph7: ''
     },
     seo: {
       home_title: 'Seelenruhe Massage Studio - Relaxation and Wellbeing in Berlin',
@@ -223,7 +261,9 @@ export const translations: Record<Language, Translation> = {
       services: 'الخدمات',
       about: 'من نحن',
       contact: 'اتصل بنا',
-      book: 'احجز موعد'
+      book: 'احجز موعد',
+      book_call: 'احجز عبر الهاتف',
+      book_email: 'احجز عبر البريد الإلكتروني'
     },
     hero: {
       rotating_headings: [
@@ -266,7 +306,7 @@ export const translations: Record<Language, Translation> = {
       subtitle: 'نتطلع لزيارتكم',
       address: 'شارع المثال 123، 12345 برلين',
       phone: '+49 30 12345678',
-      email: 'info@seelenruhe.com',
+      email: 'info@seelenruhe.com?subject=استفسار%20عن%20موعد%20مساج%20سيلينروه',
       hours: 'الإثنين-الجمعة: 9:00-20:00، السبت: 10:00-18:00',
       book_now: 'احجز الآن'
     },
@@ -275,6 +315,16 @@ export const translations: Record<Language, Translation> = {
       privacy: 'سياسة الخصوصية',
       terms: 'شروط الخدمة',
       imprint: 'بيانات الناشر'
+    },
+    founderIntro: {
+      greeting: 'أهلاً بكم أيها الأحبة!',
+      paragraph1: 'أنا نجلاء لولو، أخصائية تدليك معتمدة ومؤسسة هذا المشروع القلبي الذي نشأ من شغفي بالرفاهية الشاملة.',
+      paragraph2: 'في عيادتي، ستحصلون على أكثر من مجرد تدليك – إنها استراحتكم الشخصية من روتين الحياة اليومي، مصممة خصيصًا لتلبية احتياجاتكم.',
+      paragraph3: 'أعمل بزيوت طبيعية، وتقنيات تدليك متنوعة، وبحس مرهف، لتشعروا بالراحة التامة جسديًا وذهنيًا.',
+      paragraph4: 'والأفضل من ذلك؟ قريبًا سأوسع عروضي لتشمل علاجات تجميل احترافية – لبشرة صحية ومشرقة ومزيد من الرفاهية. لأن الجمال الحقيقي يبدأ بالعناية الذاتية.',
+      paragraph5: 'سواء كنتم تعانون من التوتر، إرهاق العضلات، أو ترغبون ببشرة نضرة – أنتم في أيدٍ أمينة.',
+      paragraph6: 'امنحوا أنفسكم قسطًا من الراحة – لجسدكم، بشرتكم، وتوازنكم الداخلي. 🌿',
+      paragraph7: ''
     },
     seo: {
       home_title: 'استوديو سيلينروه للمساج - الاسترخاء والعافية في برلين',
@@ -291,7 +341,9 @@ export const translations: Record<Language, Translation> = {
       services: 'Hizmetler',
       about: 'Hakkımızda',
       contact: 'İletişim',
-      book: 'Randevu Al'
+      book: 'Randevu Al',
+      book_call: 'Telefonla Rezervasyon Yap',
+      book_email: 'E-posta ile Rezervasyon Yap'
     },
     hero: {
       rotating_headings: [
@@ -334,7 +386,7 @@ export const translations: Record<Language, Translation> = {
       subtitle: 'Ziyaretinizi dört gözle bekliyoruz',
       address: 'Örnek Sokak 123, 12345 Berlin',
       phone: '+49 30 12345678',
-      email: 'info@seelenruhe.com',
+      email: 'info@seelenruhe.com?subject=Randevu%20Talebi%20Seelenruhe%20Masaj',
       hours: 'Pzt-Cum: 9:00-20:00, Cmt: 10:00-18:00',
       book_now: 'Şimdi Rezervasyon Yapın'
     },
@@ -343,6 +395,16 @@ export const translations: Record<Language, Translation> = {
       privacy: 'Gizlilik Politikası',
       terms: 'Hizmet Şartları',
       imprint: 'Künye'
+    },
+    founderIntro: {
+      greeting: 'Merhaba canlarım!',
+      paragraph1: 'Ben Najlaa Loulo, sertifikalı masöz ve bütünsel esenliğe olan tutkumdan doğan bu kalp projesinin kurucusuyum.',
+      paragraph2: 'Kliniğimde sadece bir masajdan daha fazlasını alırsınız – bu, günlük hayattan kişisel kaçışınızdır, ihtiyaçlarınıza göre özel olarak uyarlanmıştır.',
+      paragraph3: 'Doğal yağlar, çeşitli masaj teknikleri ve bolca hassasiyetle çalışıyorum, böylece hem fiziksel hem de zihinsel olarak kendinizi tamamen iyi hissedersiniz.',
+      paragraph4: 'Ve en iyisi mi? Yakında teklifimi profesyonel kozmetik tedavilerle genişleteceğim – sağlıklı, parlak bir cilt ve daha fazla esenlik için. Çünkü gerçek güzellik öz bakımla başlar.',
+      paragraph5: 'Gerginlikler, kas yorgunluğu veya bakımlı bir cilt arzusu olsun – benimle en iyi ellerdesiniz.',
+      paragraph6: 'Kendinize bir mola verin – bedeniniz, cildiniz ve iç dengeniz için. 🌿',
+      paragraph7: ''
     },
     seo: {
       home_title: 'Seelenruhe Masaj Stüdyosu - Berlin\'de Rahatlama ve Sağlık',
@@ -357,3 +419,4 @@ export const translations: Record<Language, Translation> = {
 export function getTranslation(lang: Language): Translation {
   return translations[lang] || translations.de;
 }
+
