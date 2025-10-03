@@ -1,6 +1,7 @@
 ---
 import type { Language } from '../lib/i18n';
 import { getTranslation } from '../data/translations';
+import BookingButton from './BookingButton.astro';
 
 export interface Props {
   lang: Language;
@@ -31,9 +32,7 @@ const t = getTranslation(lang);
       {t.hero.description}
     </p>
     
-    <a href="https://wa.me/+963937628368" target="_blank" class="inline-block bg-primary hover:bg-accent text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 opacity-0 animate-fade-in-up hero-cta" aria-label="Book an appointment" style="animation-delay: 2s">
-      {t.nav.book}
-    </a>
+    <BookingButton lang={lang} buttonClass="inline-block px-8 py-4 text-lg opacity-0 animate-fade-in-up hero-cta" style="animation-delay: 2s" />
   </div>
 
   <!-- Scroll Indicator -->

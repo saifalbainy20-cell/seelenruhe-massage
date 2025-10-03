@@ -1,0 +1,38 @@
+---
+import type { Language } from '../lib/i18n';
+import { getTranslation } from '../data/translations';
+
+export interface Props {
+  lang: Language;
+  buttonClass?: string;
+  dropdownClass?: string;
+  itemClass?: string;
+}
+
+const { lang, buttonClass, dropdownClass, itemClass } = Astro.props;
+const t = getTranslation(lang);
+
+const phoneNumber = '053147214636';
+const emailAddress = 'info@seelenruhe.com';
+const emailSubject = t.contact.email_subject || 'Anfrage Termin Seelenruhe Massage';
+const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(emailSubject)}`;
+---
+
+<div class="relative inline-block group">
+  <button
+    class={`bg-primary hover:bg-primary-600 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-md ${buttonClass || ''}`}
+    aria-expanded="false"
+    aria-controls="booking-options-menu"
+  >
+    {t.nav.book}
+  </button>
+  <div id="booking-options-menu" class={`absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 ${dropdownClass || ''}`}>
+    <a href={`tel:+${phoneNumber}`} class={`block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-md ${itemClass || ''}`}>
+      {t.nav.book_call}
+    </a>
+    <a href={mailtoLink} class={`block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-md ${itemClass || ''}`}>
+      {t.nav.book_email}
+    </a>
+  </div>
+</div>
+
