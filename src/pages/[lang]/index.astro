@@ -7,17 +7,20 @@ import Services from '../../components/Services.astro';
 import About from '../../components/About.astro';
 import FounderIntro from '../../components/FounderIntro.astro';
 import Footer from '../../components/Footer.astro';
-import { languages, type Language } from '../../lib/i18n';
+import { languages, defaultLang, type Language } from '../../lib/i18n';
 import { getTranslation } from '../../data/translations';
 import { generateOrganizationSchema } from '../../lib/structured-data';
 
 export async function getStaticPaths() {
-  return Object.keys(languages).map((lang) => ({
-    params: { lang },
-  }));
+  return Object.keys(languages)
+    .filter((lang) => lang !== defaultLang)
+    .map((lang) => ({
+      params: { lang },
+    }));
 }
 
 const { lang } = Astro.params as { lang: Language };
+const isRTL = lang === 'ar';
 const t = getTranslation(lang);
 
 const organizationData = generateOrganizationSchema({
@@ -52,7 +55,7 @@ const organizationData = generateOrganizationSchema({
     <Welcome lang={lang} />
     <Services lang={lang} />
     <About lang={lang} />
-    <FounderIntro lang={lang} />
+    <FounderIntro lang={lang} isRTL={isRTL} />
   </main>
   <Footer lang={lang} />
 </Layout>

@@ -4,9 +4,10 @@ import type { Language } from '../lib/i18n';
 
 export interface Props {
   lang: Language;
+  isRTL: boolean;
 }
 
-const { lang } = Astro.props;
+const { lang, isRTL } = Astro.props;
 const t = getTranslation(lang);
 ---
 
@@ -19,7 +20,7 @@ const t = getTranslation(lang);
         class="w-64 h-64 rounded-full object-cover shadow-lg border-4 border-primary-500 transform hover:scale-105 transition-transform duration-300"
       />
     </div>
-    <div class="md:w-2/3 text-center md:text-left">
+    <div class={`md:w-2/3 text-center ${isRTL ? 'md:text-right' : 'md:text-left'}`}>
       <h2 class="text-4xl font-serif text-gray-900 dark:text-white mb-6 leading-tight">
         {t.founderIntro.greeting}
       </h2>
