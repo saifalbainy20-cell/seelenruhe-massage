@@ -1,5 +1,5 @@
 ---
-import type { Language } from '../lib/i18n';
+import { getLocalizedPath, type Language } from '../lib/i18n';
 import { getTranslation } from '../data/translations';
 import LanguageSwitcher from './LanguageSwitcher';
 import BookingButton from './BookingButton.astro';
@@ -14,12 +14,7 @@ const t = getTranslation(lang);
 const isRTL = lang === 'ar';
 
 // Helper function to get localized path
-const getLocalizedPath = (path: string) => {
-  if (lang === 'de') {
-    return path;
-  }
-  return `/${lang}${path}`;
-};
+
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md shadow-lg transition-all duration-300">
@@ -28,8 +23,7 @@ const getLocalizedPath = (path: string) => {
       <!-- Logo -->
       <a href={getLocalizedPath('/')} class="flex items-center">
         <img 
-          src={isRTL ? "/images/LOGO_AR.svg" : "/images/LOGO.svg"} 
-          alt="Seelenruhe Logo" 
+         src={isRTL ? "/images/LOGO_AR.svg" : "/images/LOGO.svg"}         alt="Seelenruhe Logo" 
           class="h-12 w-auto transition-transform duration-300 hover:scale-105"
         />
         <span class="ml-3 text-white text-xl font-bold font-serif">Seelenruhe Massage</span>

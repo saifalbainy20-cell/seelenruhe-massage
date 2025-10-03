@@ -18,7 +18,7 @@ const isRTL = lang === 'ar';
 // Generate hreflang links
 const hreflangs = Object.keys(languages).map(l => ({
   lang: l,
-  url: l === 'de' ? `${Astro.site}${currentPath}` : `${Astro.site}${l}${currentPath}`
+  url: l === 'de' ? `${Astro.site}${currentPath}` : `${Astro.site}/${l}${currentPath}`
 }));
 ---
 
@@ -32,7 +32,7 @@ const hreflangs = Object.keys(languages).map(l => ({
     <meta name="generator" content={Astro.generator} />
     
     <!-- Canonical URL -->
-    <link rel="canonical" href={canonical || (lang === 'de' ? `${Astro.site}${currentPath}` : `${Astro.site}${lang}${currentPath}`)} />
+    <link rel="canonical" href={canonical || (lang === 'de' ? `${Astro.site}${currentPath}` : `${Astro.site}/${lang}${currentPath}`)} />
     
     <!-- Hreflang tags -->
     {hreflangs.map(({ lang: hreflang, url }) => (
@@ -44,7 +44,7 @@ const hreflangs = Object.keys(languages).map(l => ({
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical || (lang === 'de' ? `${Astro.site}${currentPath}` : `${Astro.site}${lang}${currentPath}`)} />
+    <meta property="og:url" content={canonical || (lang === 'de' ? `${Astro.site}${currentPath}` : `${Astro.site}/${lang}${currentPath}`)} />
     <meta property="og:site_name" content="Seelenruhe Massage Studio" />
     <meta property="og:locale" content={lang === 'de' ? 'de_DE' : lang === 'en' ? 'en_US' : lang === 'ar' ? 'ar_AR' : 'tr_TR'} />
     

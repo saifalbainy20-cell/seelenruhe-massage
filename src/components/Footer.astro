@@ -17,7 +17,7 @@ const isRTL = lang === 'ar';
       <!-- Logo and Description -->
       <div class="md:col-span-2">
         <img 
-          src={isRTL ? "/images/logo_arabic.svg" : "/images/LOGO.svg"} 
+          src={isRTL ? "/images/LOGO_AR.svg" : "/images/LOGO.svg"} 
           alt="Seelenruhe Logo" 
           class="h-12 w-auto mb-4"
         />
@@ -31,22 +31,22 @@ const isRTL = lang === 'ar';
         <h3 class="text-lg font-bold mb-4 text-secondary">Quick Links</h3>
         <ul class="space-y-2">
           <li>
-            <a href={`/${lang}`} class="text-gray-400 hover:text-primary transition-colors duration-300">
+            <a href={lang === 'de' ? '/' : `/${lang}`} class="text-gray-400 hover:text-primary transition-colors duration-300">
               {t.nav.home}
             </a>
           </li>
           <li>
-            <a href={`/${lang}/services`} class="text-gray-400 hover:text-primary transition-colors duration-300">
+            <a href={lang === 'de' ? '/services' : `/${lang}/services`} class="text-gray-400 hover:text-primary transition-colors duration-300">
               {t.nav.services}
             </a>
           </li>
           <li>
-            <a href={`/${lang}#about`} class="text-gray-400 hover:text-primary transition-colors duration-300">
+            <a href={lang === 'de' ? '/#about' : `/${lang}#about`} class="text-gray-400 hover:text-primary transition-colors duration-300">
               {t.nav.about}
             </a>
           </li>
           <li>
-            <a href={`/${lang}#contact`} class="text-gray-400 hover:text-primary transition-colors duration-300">
+            <a href={lang === 'de' ? '/#contact' : `/${lang}#contact`} class="text-gray-400 hover:text-primary transition-colors duration-300">
               {t.nav.contact}
             </a>
           </li>
