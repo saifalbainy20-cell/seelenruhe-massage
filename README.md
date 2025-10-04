@@ -1,172 +1,110 @@
-# Seelenruhe Massage Studio - SEO Optimized Website
+# Seelenruhe Massage Studio Website
 
-A fully SEO-optimized, multilingual static website built with Astro, featuring professional massage and wellness services.
+A modern, multilingual website for Seelenruhe Massage Studio built with Astro, React, and Tailwind CSS.
 
 ## 🌟 Features
 
-### SEO Optimization
+- **Multilingual Support**: German (default), English, Arabic, Turkish
+- **RTL Support**: Full right-to-left text support for Arabic
+- **Modern Design**: Professional, responsive design with smooth animations
+- **SEO Optimized**: Advanced SEO with structured data and meta tags
+- **Dynamic Navigation**: Smart navigation highlighting with smooth scrolling
+- **Accessibility**: WCAG compliant with semantic HTML and ARIA labels
 
-This project implements comprehensive SEO best practices to ensure maximum visibility in search engines. The website includes unique meta tags for every page and language, canonical URLs to prevent duplicate content issues, and hreflang tags for proper language targeting. Structured data using JSON-LD schema markup provides rich search results, while a dynamic sitemap and robots.txt ensure proper indexing. All pages are statically generated for optimal performance and SEO.
+## 🚀 Recent Improvements
 
-### Multilingual Support
+### UI/UX Enhancements
+- ✅ Fixed language switcher appearance with better contrast
+- ✅ Improved RTL support for Arabic in footer
+- ✅ Added dynamic navigation highlighting
+- ✅ Enhanced smooth scrolling with proper offset calculations
 
-The website supports four languages with full internationalization capabilities. German serves as the default language, with English, Arabic, and Turkish also available. The Arabic version includes proper RTL (right-to-left) support, and all translations are centralized in a single file for easy management. Each language has its own URL structure following the pattern `/[lang]/...`, ensuring clean and SEO-friendly URLs.
+### SEO & Performance
+- ✅ Advanced meta tags and Open Graph optimization
+- ✅ LocalBusiness structured data schema
+- ✅ Twitter Card optimization
+- ✅ Performance optimizations
 
-### Modern Design
+## 🛠️ Tech Stack
 
-The design incorporates the color scheme from the V6 project, featuring a vibrant orange primary color (#f6861f), a bright yellow secondary color (#edeb6d), and a warm brown accent (#6f6549). Typography uses Playfair Display for elegant headings and Inter for readable body text. The hero section features rotating background images with smooth zoom effects, while all interactive elements include hover states and smooth transitions.
+- **Framework**: Astro 5.x
+- **Frontend**: React 19.x
+- **Styling**: Tailwind CSS 4.x
+- **Build Tool**: Vite
+- **Deployment**: Static Site Generation (SSG)
 
-### Performance
-
-Built with Astro's static site generation, the website delivers exceptional performance. All pages are pre-rendered at build time, resulting in instant page loads. Tailwind CSS v4 with Vite plugin ensures minimal CSS bundle size, and React components are only hydrated when necessary for interactivity. The optimized image loading and minimal JavaScript footprint contribute to fast loading times across all devices.
-
-## 🏗️ Project Structure
-
-```
-seelenruhe-massage-final/
-├── public/
-│   ├── images/           # All images from V6 project
-│   ├── favicon.svg       # Site favicon
-│   └── _redirects        # Cloudflare Pages redirects
-├── src/
-│   ├── components/       # Reusable Astro and React components
-│   │   ├── Header.astro
-│   │   ├── Footer.astro
-│   │   ├── Hero.astro
-│   │   ├── Services.astro
-│   │   ├── About.astro
-│   │   ├── Welcome.astro
-│   │   └── LanguageSwitcher.tsx
-│   ├── layouts/
-│   │   └── Layout.astro  # Main layout with SEO meta tags
-│   ├── pages/
-│   │   ├── [lang]/
-│   │   │   ├── index.astro
-│   │   │   └── services/
-│   │   │       ├── index.astro
-│   │   │       └── [slug].astro
-│   │   ├── index.astro   # Root redirect
-│   │   ├── sitemap.xml.ts
-│   │   └── robots.txt.ts
-│   ├── lib/
-│   │   ├── i18n.ts       # Internationalization utilities
-│   │   └── structured-data.ts  # JSON-LD schema generators
-│   ├── data/
-│   │   └── translations.ts  # Centralized translations
-│   ├── content/
-│   │   └── services.json # Service data with translations
-│   └── styles/
-│       └── global.css    # Global styles with V6 colors
-├── package.json
-├── astro.config.mjs
-├── tsconfig.json
-├── SEO_CHECKLIST.md      # Comprehensive SEO checklist
-└── README.md
-```
-
-## 🚀 Getting Started
-
-### Installation
+## 📦 Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/saifalbainy20-cell/seelenruhe-massage.git
+
+# Navigate to project directory
+cd seelenruhe-massage
+
+# Install dependencies
 npm install
-```
 
-### Development
-
-```bash
+# Start development server
 npm run dev
-```
 
-Visit `http://localhost:4321` to see the site in development mode.
-
-### Build
-
-```bash
+# Build for production
 npm run build
-```
 
-Generates static files in the `dist/` directory.
-
-### Preview
-
-```bash
+# Preview production build
 npm run preview
 ```
 
-Preview the production build locally.
+## 🌐 Supported Languages
 
-## 📦 Technologies
+- **German (de)**: Default language
+- **English (en)**: Full translation
+- **Arabic (ar)**: RTL support with full translation
+- **Turkish (tr)**: Full translation
 
-The project leverages modern web technologies including **Astro 5.14.1** for static site generation, **React 19.1.1** for interactive components, **Tailwind CSS v4** with Vite plugin for styling, **TypeScript** for type safety, and **Astro Sitemap** for automatic sitemap generation.
+## 📁 Project Structure
 
-## 🌍 Supported Languages
-
-- **German (de)** - Default language at `/de/`
-- **English (en)** - Available at `/en/`
-- **Arabic (ar)** - With RTL support at `/ar/`
-- **Turkish (tr)** - Available at `/tr/`
-
-Each language version includes complete translations and proper hreflang tags for international SEO.
-
-## 📄 Pages
-
-The site includes a comprehensive homepage with hero section, welcome message, services overview, and about section. The services index page lists all available services, while individual service pages provide detailed information including pricing, duration, and related services. Additional pages cover contact information and booking options.
+```
+src/
+├── components/          # Reusable UI components
+├── layouts/            # Page layouts
+├── pages/              # Route pages
+├── data/               # Translation data
+├── lib/                # Utility functions
+├── styles/             # Global styles
+└── scripts/            # JavaScript utilities
+```
 
 ## 🎨 Design System
 
-### Colors (from V6)
-
-- **Primary**: #f6861f (Orange) - Call-to-action buttons and highlights
-- **Secondary**: #edeb6d (Yellow) - Headings and accents
-- **Accent**: #6f6549 (Brown) - Hover states and secondary elements
-
-### Typography
-
-- **Headings**: Playfair Display (serif)
-- **Body**: Inter (sans-serif)
-
-## 🔍 SEO Features
-
-The website implements comprehensive SEO features including unique titles and descriptions for every page, canonical URLs to prevent duplicate content, hreflang tags for international targeting, and structured data with Organization, Service, and Breadcrumb schemas. A dynamic sitemap covers all pages and languages, while robots.txt allows proper crawler access. All images include descriptive alt attributes for accessibility and SEO.
+- **Primary Color**: #f6861f (Orange)
+- **Secondary Color**: #edeb6d (Yellow)
+- **Accent Color**: #6f6549 (Brown)
+- **Typography**: Playfair Display (headings), Inter (body)
 
 ## 📱 Responsive Design
 
-The website provides an optimal experience across all devices through mobile-first design principles, responsive navigation with hamburger menu, touch-friendly buttons and links, and adaptive images and layouts for different screen sizes.
+The website is fully responsive and optimized for:
+- Desktop (1200px+)
+- Tablet (768px - 1199px)
+- Mobile (320px - 767px)
 
-## 🚀 Deployment (Cloudflare Pages)
+## 🔍 SEO Features
 
-The project is optimized for Cloudflare Pages deployment with Node.js 20.x specified, static output mode for optimal performance, `_redirects` file for proper root URL handling, and build command `npm run build` generating all static files in the `dist/` directory.
-
-## 📝 Content Management
-
-Content management is streamlined through centralized files. All translations are stored in `src/data/translations.ts`, service information is maintained in `src/content/services.json`, and images are organized in `public/images/` with clear naming conventions.
-
-## 🔧 Customization
-
-### Adding a New Language
-
-1. Update the languages object in `src/lib/i18n.ts`
-2. Add translations to `src/data/translations.ts`
-3. Add service translations to `src/content/services.json`
-
-### Adding a New Service
-
-1. Add an entry to `src/content/services.json` with translations for all languages
-2. Include a service image in `public/images/`
-
-### Modifying Colors
-
-Update CSS variables in `src/styles/global.css` for consistent theming across the site.
-
-## 📊 Analytics Ready
-
-The website is prepared for analytics integration with clean URL structure for easy tracking, unique page titles for detailed analysis, Google Search Console readiness, and event tracking capability for call-to-action buttons.
+- Multilingual sitemap generation
+- Hreflang tags for international SEO
+- Structured data (Organization, LocalBusiness, Services)
+- Open Graph and Twitter Card optimization
+- Canonical URLs for all pages
 
 ## 📄 License
 
-This project is proprietary and confidential, created for Seelenruhe Massage Studio.
+This project is proprietary and confidential. All rights reserved.
 
-## 🙏 Credits
+## 🤝 Contributing
 
-Built with design elements from V6 project, SEO best practices from seelenruhe-massage-original-style, and powered by Astro, React, and Tailwind CSS.
+This is a private project. For any issues or suggestions, please contact the development team.
+
+---
+
+Built with ❤️ for Seelenruhe Massage Studio
