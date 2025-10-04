@@ -10,7 +10,8 @@ export const defaultLang = 'de';
 export type Language = keyof typeof languages;
 
 export function getLangFromUrl(url: URL): Language {
-  const [, lang] = url.pathname.split('/');
+  const [, lang] = url.pathname.split("/");
+  if (lang === "de") return defaultLang; // Treat /de as default language
   if (lang in languages) return lang as Language;
   return defaultLang;
 }
@@ -26,6 +27,7 @@ export function getLocalizedPath(lang: Language, path: string = ''): string {
     return path || '/';
   }
   return `/${lang}${path}`;
+
 }
 
 export function getAlternateLanguages(currentLang: Language, currentPath: string) {
@@ -33,6 +35,6 @@ export function getAlternateLanguages(currentLang: Language, currentPath: string
     .filter(lang => lang !== currentLang)
     .map(lang => ({
       lang,
-      url: lang === defaultLang ? currentPath : `/${lang}${currentPath}`
+      url: lang === defaultLang ? currentPath : `/${lang}${currentPath}`,
     }));
 }

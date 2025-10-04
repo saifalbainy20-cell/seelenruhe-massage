@@ -117,7 +117,7 @@ export const translations: Record<Language, Translation> = {
     },
     welcome: {
       title: 'Willkommen bei Seelenruhe',
-      subtitle: 'Ihr Massage-Studio in Berlin',
+      subtitle: 'Ihr Massage-Studio in Braunschweig',
       description: 'Bei Seelenruhe bieten wir Ihnen professionelle Massage- und Wellness-Behandlungen in einer entspannten und harmonischen Atmosphäre. Unser erfahrenes Team sorgt dafür, dass Sie sich rundum wohlfühlen und neue Energie tanken können.'
     },
     services: {
@@ -144,8 +144,8 @@ export const translations: Record<Language, Translation> = {
     contact: {
       title: 'Kontakt',
       subtitle: 'Wir freuen uns auf Ihren Besuch',
-      address: 'Musterstraße 123, 12345 Berlin',
-      phone: '+49 30 12345678',
+      address: 'Kupfertwete 7, 38100 Braunschweig',
+      phone: '053147214636',
       email: 'info@seelenruhe.com?subject=Anfrage%20Termin%20Seelenruhe%20Massage',
       hours: 'Mo-Fr: 9:00-20:00 Uhr, Sa: 10:00-18:00 Uhr',
       book_now: 'Jetzt buchen'
@@ -167,11 +167,11 @@ export const translations: Record<Language, Translation> = {
       paragraph7: ''
     },
     seo: {
-      home_title: 'Seelenruhe Massage Studio - Entspannung und Wohlbefinden in Berlin',
-      home_description: 'Professionelle Massage- und Wellness-Behandlungen in Berlin. Entspannung für Körper und Seele in unserem modernen Studio. Buchen Sie jetzt Ihren Termin!',
-      home_keywords: 'Massage Berlin, Wellness Berlin, Entspannung, Massage Studio, Wohlbefinden, Therapie',
-      services_title: 'Unsere Leistungen - Seelenruhe Massage Studio Berlin',
-      services_description: 'Entdecken Sie unsere vielfältigen Massage- und Wellness-Behandlungen: Klassische Massage, Wellness-Behandlungen, Therapie-Massage und mehr.'
+      home_title: 'Seelenruhe Massage Studio - Entspannung und Wohlbefinden in Braunschweig',
+      home_description: 'Professionelle Massage- und Wellness-Behandlungen in Braunschweig. Entspannung für Körper und Seele in unserem modernen Studio. Buchen Sie jetzt Ihren Termin!',
+      home_keywords: 'Massage Braunschweig, Wellness Braunschweig, Entspannung, Massage Studio, Wohlbefinden, Therapie, Rückenmassage, Fußreflexzonenmassage, Hot Stone Massage, Aromatherapie Massage, Sportmassage, Tiefengewebsmassage, Schwangerschaftsmassage, Paarmassage, Gesichtsbehandlung, Maniküre, Pediküre, Waxing, Haarentfernung, Kosmetik, Schönheitspflege',
+      services_title: 'Unsere Leistungen - Seelenruhe Massage Studio Braunschweig',
+      services_description: 'Entdecken Sie unsere vielfältigen Massage- und Wellness-Behandlungen: Klassische Massage, Wellness-Behandlungen, Therapie-Massage, Gesichtsbehandlungen, Maniküre, Pediküre, Waxing und mehr.'
     }
   },
   
@@ -197,7 +197,7 @@ export const translations: Record<Language, Translation> = {
     },
     welcome: {
       title: 'Welcome to Seelenruhe',
-      subtitle: 'Your Massage Studio in Berlin',
+      subtitle: 'Your Massage Studio in Braunschweig',
       description: 'At Seelenruhe, we offer professional massage and wellness treatments in a relaxed and harmonious atmosphere. Our experienced team ensures that you feel completely comfortable and can recharge your energy.'
     },
     services: {
@@ -224,8 +224,8 @@ export const translations: Record<Language, Translation> = {
     contact: {
       title: 'Contact',
       subtitle: 'We look forward to your visit',
-      address: 'Sample Street 123, 12345 Berlin',
-      phone: '+49 30 12345678',
+      address: 'Kupfertwete 7, 38100 Braunschweig',
+      phone: '053147214636',
       email: 'info@seelenruhe.com?subject=Appointment%20Inquiry%20Seelenruhe%20Massage',
       hours: 'Mon-Fri: 9:00-20:00, Sat: 10:00-18:00',
       book_now: 'Book Now'
@@ -247,11 +247,11 @@ export const translations: Record<Language, Translation> = {
       paragraph7: ''
     },
     seo: {
-      home_title: 'Seelenruhe Massage Studio - Relaxation and Wellbeing in Berlin',
-      home_description: 'Professional massage and wellness treatments in Berlin. Relaxation for body and soul in our modern studio. Book your appointment now!',
-      home_keywords: 'Massage Berlin, Wellness Berlin, Relaxation, Massage Studio, Wellbeing, Therapy',
-      services_title: 'Our Services - Seelenruhe Massage Studio Berlin',
-      services_description: 'Discover our diverse massage and wellness treatments: Classic Massage, Wellness Treatments, Therapy Massage and more.'
+      home_title: 'Seelenruhe Massage Studio - Relaxation and Wellbeing in Braunschweig',
+      home_description: 'Professional massage and wellness treatments in Braunschweig. Relaxation for body and soul in our modern studio. Book your appointment now!',
+      home_keywords: 'Massage Braunschweig, Wellness Braunschweig, Relaxation, Massage Studio, Wellbeing, Therapy, Back Massage, Foot Reflexology, Hot Stone Massage, Aromatherapy Massage, Sports Massage, Deep Tissue Massage, Pregnancy Massage, Couple Massage, Facial Treatment, Manicure, Pedicure, Waxing, Hair Removal, Cosmetics, Beauty Care',
+      services_title: 'Our Services - Seelenruhe Massage Studio Braunschweig',
+      services_description: 'Discover our diverse massage and wellness treatments: Classic Massage, Wellness Treatments, Therapy Massage, Facial Treatments, Manicure, Pedicure, Waxing and more.'
     }
   },
   
@@ -277,7 +277,7 @@ export const translations: Record<Language, Translation> = {
     },
     welcome: {
       title: 'مرحباً بكم في سيلينروه',
-      subtitle: 'استوديو المساج الخاص بك في برلين',
+      subtitle: 'استوديو المساج الخاص بك في براونشفايغ',
       description: 'في سيلينروه، نقدم لكم علاجات مساج واسترخاء احترافية في جو مريح ومتناغم. فريقنا ذو الخبرة يضمن أن تشعروا بالراحة التامة وأن تستعيدوا طاقتكم.'
     },
     services: {
@@ -304,8 +304,8 @@ export const translations: Record<Language, Translation> = {
     contact: {
       title: 'اتصل بنا',
       subtitle: 'نتطلع لزيارتكم',
-      address: 'شارع المثال 123، 12345 برلين',
-      phone: '+49 30 12345678',
+      address: 'Kupfertwete 7, 38100 Braunschweig',
+      phone: '053147214636',
       email: 'info@seelenruhe.com?subject=استفسار%20عن%20موعد%20مساج%20سيلينروه',
       hours: 'الإثنين-الجمعة: 9:00-20:00، السبت: 10:00-18:00',
       book_now: 'احجز الآن'
@@ -327,11 +327,11 @@ export const translations: Record<Language, Translation> = {
       paragraph7: ''
     },
     seo: {
-      home_title: 'استوديو سيلينروه للمساج - الاسترخاء والعافية في برلين',
-      home_description: 'علاجات مساج واسترخاء احترافية في برلين. الاسترخاء للجسم والروح في استوديونا الحديث. احجز موعدك الآن!',
-      home_keywords: 'مساج برلين، عافية برلين، استرخاء، استوديو مساج، رفاهية، علاج',
-      services_title: 'خدماتنا - استوديو سيلينروه للمساج برلين',
-      services_description: 'اكتشف علاجات المساج والاسترخاء المتنوعة لدينا: المساج الكلاسيكي، علاجات العافية، المساج العلاجي والمزيد.'
+      home_title: 'استوديو سيلينروه للمساج - الاسترخاء والعافية في براونشفايغ',
+      home_description: 'علاجات مساج واسترخاء احترافية في براونشفايغ. الاسترخاء للجسم والروح في استوديونا الحديث. احجز موعدك الآن!',
+      home_keywords: 'مساج براونشفايغ، عافية براونشفايغ، استرخاء، استوديو مساج، رفاهية، علاج، مساج الظهر، تدليك القدم الانعكاسي، مساج الحجر الساخن، مساج الروائح العطرية، مساج رياضي، مساج الأنسجة العميقة، مساج الحمل، مساج الأزواج، علاج الوجه، مانيكير، باديكير، إزالة الشعر بالشمع، إزالة الشعر، مستحضرات التجميل، العناية بالجمال',
+      services_title: 'خدماتنا - استوديو سيلينروه للمساج براونشفايغ',
+      services_description: 'اكتشف علاجات المساج والاسترخاء المتنوعة لدينا: المساج الكلاسيكي، علاجات العافية، المساج العلاجي، علاجات الوجه، مانيكير، باديكير، إزالة الشعر بالشمع والمزيد.'
     }
   },
   
@@ -357,7 +357,7 @@ export const translations: Record<Language, Translation> = {
     },
     welcome: {
       title: 'Seelenruhe\'ye Hoş Geldiniz',
-      subtitle: 'Berlin\'deki Masaj Stüdyonuz',
+      subtitle: 'Braunschweig\'deki Masaj Stüdyonuz',
       description: 'Seelenruhe\'de rahat ve uyumlu bir atmosferde profesyonel masaj ve wellness tedavileri sunuyoruz. Deneyimli ekibimiz kendinizi tamamen rahat hissetmenizi ve enerjinizi yenilemenizi sağlar.'
     },
     services: {
@@ -384,8 +384,8 @@ export const translations: Record<Language, Translation> = {
     contact: {
       title: 'İletişim',
       subtitle: 'Ziyaretinizi dört gözle bekliyoruz',
-      address: 'Örnek Sokak 123, 12345 Berlin',
-      phone: '+49 30 12345678',
+      address: 'Kupfertwete 7, 38100 Braunschweig',
+      phone: '053147214636',
       email: 'info@seelenruhe.com?subject=Randevu%20Talebi%20Seelenruhe%20Masaj',
       hours: 'Pzt-Cum: 9:00-20:00, Cmt: 10:00-18:00',
       book_now: 'Şimdi Rezervasyon Yapın'
@@ -407,11 +407,11 @@ export const translations: Record<Language, Translation> = {
       paragraph7: ''
     },
     seo: {
-      home_title: 'Seelenruhe Masaj Stüdyosu - Berlin\'de Rahatlama ve Sağlık',
-      home_description: 'Berlin\'de profesyonel masaj ve wellness tedavileri. Modern stüdyomuzda vücut ve ruh için rahatlama. Şimdi randevunuzu alın!',
-      home_keywords: 'Berlin Masaj, Berlin Wellness, Rahatlama, Masaj Stüdyosu, Sağlık, Terapi',
-      services_title: 'Hizmetlerimiz - Seelenruhe Masaj Stüdyosu Berlin',
-      services_description: 'Çeşitli masaj ve wellness tedavilerimizi keşfedin: Klasik Masaj, Wellness Tedavileri, Terapi Masajı ve daha fazlası.'
+      home_title: 'Seelenruhe Massage Studio - Rahatlama ve Sağlık Braunschweig',
+      home_description: 'Braunschweig\'da profesyonel masaj ve wellness tedavileri. Modern stüdyomuzda beden ve ruh için rahatlama. Randevunuzu şimdi ayırtın!',
+      home_keywords: 'Masaj Braunschweig, Wellness Braunschweig, Rahatlama, Masaj Stüdyosu, Sağlık, Terapi, Sırt Masajı, Ayak Refleksoloji, Sıcak Taş Masajı, Aromaterapi Masajı, Spor Masajı, Derin Doku Masajı, Hamile Masajı, Çift Masajı, Yüz Bakımı, Manikür, Pedikür, Ağda, Epilasyon, Kozmetik, Güzellik Bakımı',
+      services_title: 'Hizmetlerimiz - Seelenruhe Masaj Stüdyosu Braunschweig',
+      services_description: 'Çeşitli masaj ve wellness tedavilerimizi keşfedin: Klasik Masaj, Wellness Tedavileri, Terapi Masajı, Yüz Bakımı, Manikür, Pedikür, Ağda ve daha fazlası.'
     }
   }
 };
@@ -419,4 +419,3 @@ export const translations: Record<Language, Translation> = {
 export function getTranslation(lang: Language): Translation {
   return translations[lang] || translations.de;
 }
-
