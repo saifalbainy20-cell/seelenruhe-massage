@@ -29,13 +29,15 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ lang, currentPath }
       </button>
 
       {isOpen && (
-        <div className="absolute top-full mt-2 bg-black/80 backdrop-blur-md shadow-lg rounded-lg overflow-hidden min-w-[150px] z-50">
+        <div className="absolute top-full mt-2 bg-black/90 backdrop-blur-md shadow-lg rounded-lg overflow-hidden min-w-[150px] z-50 border border-gray-700">
           {Object.entries(languages).map(([code, name]) => (
             <button
               key={code}
               onClick={() => handleLanguageChange(code as Language)}
-              className={`block w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors ${
-                code === lang ? 'bg-secondary/20 text-secondary font-medium' : 'text-white/90'
+              className={`block w-full text-left px-4 py-2 transition-colors ${
+                code === lang 
+                  ? 'bg-secondary text-black font-medium' 
+                  : 'text-white/90 hover:bg-secondary/20 hover:text-secondary'
               }`}
             >
               {name}

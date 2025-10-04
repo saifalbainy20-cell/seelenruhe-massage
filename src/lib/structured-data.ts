@@ -28,7 +28,7 @@ export interface ServiceData {
 export function generateOrganizationSchema(data: OrganizationData) {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': ['Organization', 'LocalBusiness', 'HealthAndBeautyBusiness'],
     name: data.name,
     url: data.url,
     logo: data.logo,
@@ -45,7 +45,18 @@ export function generateOrganizationSchema(data: OrganizationData) {
       telephone: data.contactPoint.telephone,
       email: data.contactPoint.email,
       contactType: data.contactPoint.contactType
-    }
+    },
+    openingHours: [
+      'Mo-Fr 09:00-18:00',
+      'Sa 09:00-16:00'
+    ],
+    priceRange: '€€',
+    currenciesAccepted: 'EUR',
+    paymentAccepted: 'Cash, Credit Card',
+    hasMap: 'https://maps.google.com/?q=' + encodeURIComponent(data.address.streetAddress + ', ' + data.address.addressLocality),
+    sameAs: [
+      data.url
+    ]
   };
 }
 

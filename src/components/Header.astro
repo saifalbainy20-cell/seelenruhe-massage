@@ -21,7 +21,7 @@ const isRTL = lang === 'ar';
   <nav class="container mx-auto px-6 py-4">
     <div class="flex items-center justify-between">
       <!-- Logo -->
-      <a href={getLocalizedPath('/')} class="flex items-center">
+      <a href={getLocalizedPath(lang,'/')} class="flex items-center">
         <img 
          src={isRTL ? "/images/logo_arabic.svg" : "/images/LOGO.svg"}         alt="Seelenruhe Logo" 
           class="h-12 w-auto transition-transform duration-300 hover:scale-105"
@@ -34,7 +34,7 @@ const isRTL = lang === 'ar';
         <ul class="flex items-center space-x-8">
           <li>
             <a 
-              href={getLocalizedPath('/')}
+              href={getLocalizedPath(lang,'/')}
               class={`text-white/90 hover:text-secondary transition-colors duration-300 font-medium ${currentPath === '' ? 'text-secondary' : ''}`}
             >
               {t.nav.home}
@@ -42,7 +42,7 @@ const isRTL = lang === 'ar';
           </li>
           <li>
             <a 
-              href={getLocalizedPath('/services')}
+              href={getLocalizedPath(lang,'/services')}
               class={`text-white/90 hover:text-secondary transition-colors duration-300 font-medium ${currentPath.startsWith('/services') ? 'text-secondary' : ''}`}
             >
               {t.nav.services}
@@ -50,16 +50,18 @@ const isRTL = lang === 'ar';
           </li>
           <li>
             <a 
-              href={getLocalizedPath('/#about')}
-              class="text-white/90 hover:text-secondary transition-colors duration-300 font-medium"
+              href={getLocalizedPath(lang,'/#about')}
+              class="text-white/90 hover:text-secondary transition-colors duration-300 font-medium nav-link"
+              data-target="about"
             >
               {t.nav.about}
             </a>
           </li>
           <li>
             <a 
-              href={getLocalizedPath('/#contact')}
-              class="text-white/90 hover:text-secondary transition-colors duration-300 font-medium"
+              href={getLocalizedPath(lang,'/#contact')}
+              class="text-white/90 hover:text-secondary transition-colors duration-300 font-medium nav-link"
+              data-target="contact"
             >
               {t.nav.contact}
             </a>
@@ -93,7 +95,7 @@ const isRTL = lang === 'ar';
       <ul class="flex flex-col space-y-4">
         <li>
           <a 
-            href={getLocalizedPath('/')}
+            href={getLocalizedPath(lang,'/')}
             class={`block text-white/90 hover:text-secondary transition-colors duration-300 font-medium ${currentPath === '' ? 'text-secondary' : ''}`}
           >
             {t.nav.home}
@@ -101,7 +103,7 @@ const isRTL = lang === 'ar';
         </li>
         <li>
           <a 
-            href={getLocalizedPath('/services')}
+            href={getLocalizedPath(lang,'/services')}
             class={`block text-white/90 hover:text-secondary transition-colors duration-300 font-medium ${currentPath.startsWith('/services') ? 'text-secondary' : ''}`}
           >
             {t.nav.services}
@@ -109,16 +111,18 @@ const isRTL = lang === 'ar';
         </li>
         <li>
           <a 
-            href={getLocalizedPath('/#about')}
-            class="block text-white/90 hover:text-secondary transition-colors duration-300 font-medium"
+            href={getLocalizedPath(lang,'/#about')}
+            class="block text-white/90 hover:text-secondary transition-colors duration-300 font-medium nav-link"
+            data-target="about"
           >
             {t.nav.about}
           </a>
         </li>
         <li>
           <a 
-            href={getLocalizedPath('/#contact')}
-            class="block text-white/90 hover:text-secondary transition-colors duration-300 font-medium"
+            href={getLocalizedPath(lang,'/#contact')}
+            class="block text-white/90 hover:text-secondary transition-colors duration-300 font-medium nav-link"
+            data-target="contact"
           >
             {t.nav.contact}
           </a>
@@ -142,5 +146,96 @@ const isRTL = lang === 'ar';
         mobileMenu.classList.toggle('hidden');
       });
     }
+
+    // Navigation highlighting and smooth scrolling functionality
+    function highlightActiveNavigation() {
+      const currentHash = window.location.hash;
+      
+      // Get all navigation links
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      navLinks.forEach(link => {
+        const target = link.getAttribute('data-target');
+        
+        if (target) {
+          // Remove existing active classes
+          link.classList.remove('text-secondary');
+          link.classList.add('text-white/90');
+          
+          // Check if we're currently viewing this section
+          if (currentHash === `#${target}`) {
+            link.classList.remove('text-white/90');
+            link.classList.add('text-secondary');
+          } else {
+            // Check if section is in viewport
+            const targetElement = document.getElementById(target);
+            if (targetElement && isElementInViewport(targetElement)) {
+              link.classList.remove('text-white/90');
+              link.classList.add('text-secondary');
+            }
+          }
+        }
+      });
+    }
+    
+    // Function to check if element is in viewport
+    function isElementInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      
+      // Consider element in viewport if it's at least 30% visible
+      return (
+        rect.top <= windowHeight * 0.7 &&
+        rect.bottom >= windowHeight * 0.3
+      );
+    }
+    
+    // Smooth scrolling for anchor links
+    const anchorLinks = document.querySelectorAll('a[href*="#"]');
+    
+    anchorLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        
+        // Only handle internal anchor links
+        if (href.includes('#') && (href.startsWith('#') || href.includes(window.location.pathname))) {
+          const targetId = href.split('#')[1];
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            e.preventDefault();
+            
+            // Calculate offset for fixed header
+            const headerHeight = document.querySelector('header')?.offsetHeight || 80;
+            const targetPosition = targetElement.offsetTop - headerHeight;
+            
+            // Smooth scroll to target
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            
+            // Update URL hash
+            history.pushState(null, null, `#${targetId}`);
+            
+            // Highlight the active link
+            setTimeout(highlightActiveNavigation, 100);
+          }
+        }
+      });
+    });
+    
+    // Initialize functionality
+    highlightActiveNavigation();
+    
+    // Update highlighting on scroll
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(highlightActiveNavigation, 100);
+    });
+    
+    // Update highlighting on hash change
+    window.addEventListener('hashchange', highlightActiveNavigation);
   });
 </script>

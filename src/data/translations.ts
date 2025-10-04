@@ -146,7 +146,7 @@ export const translations: Record<Language, Translation> = {
       subtitle: 'Wir freuen uns auf Ihren Besuch',
       address: 'Kupfertwete 7, 38100 Braunschweig',
       phone: '053147214636',
-      email: 'info@seelenruhe.com?subject=Anfrage%20Termin%20Seelenruhe%20Massage',
+      email: 'info@seelenruhe.com',
       hours: 'Mo-Fr: 9:00-20:00 Uhr, Sa: 10:00-18:00 Uhr',
       book_now: 'Jetzt buchen'
     },
@@ -226,7 +226,7 @@ export const translations: Record<Language, Translation> = {
       subtitle: 'We look forward to your visit',
       address: 'Kupfertwete 7, 38100 Braunschweig',
       phone: '053147214636',
-      email: 'info@seelenruhe.com?subject=Appointment%20Inquiry%20Seelenruhe%20Massage',
+      email: 'info@seelenruhe.com',
       hours: 'Mon-Fri: 9:00-20:00, Sat: 10:00-18:00',
       book_now: 'Book Now'
     },
@@ -306,7 +306,7 @@ export const translations: Record<Language, Translation> = {
       subtitle: 'نتطلع لزيارتكم',
       address: 'Kupfertwete 7, 38100 Braunschweig',
       phone: '053147214636',
-      email: 'info@seelenruhe.com?subject=استفسار%20عن%20موعد%20مساج%20سيلينروه',
+      email: 'info@seelenruhe.com',
       hours: 'الإثنين-الجمعة: 9:00-20:00، السبت: 10:00-18:00',
       book_now: 'احجز الآن'
     },
@@ -386,7 +386,7 @@ export const translations: Record<Language, Translation> = {
       subtitle: 'Ziyaretinizi dört gözle bekliyoruz',
       address: 'Kupfertwete 7, 38100 Braunschweig',
       phone: '053147214636',
-      email: 'info@seelenruhe.com?subject=Randevu%20Talebi%20Seelenruhe%20Masaj',
+      email: 'info@seelenruhe.com',
       hours: 'Pzt-Cum: 9:00-20:00, Cmt: 10:00-18:00',
       book_now: 'Şimdi Rezervasyon Yapın'
     },
